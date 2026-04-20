@@ -6,7 +6,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     exclude-result-prefixes="tei xs">
     
-    <!-- MAPPING témoins & familles -->
+    <!-- mapping témoins & familles -->
     <xsl:param name="family-Metz_B"                   select="'P12'"/>
     <xsl:param name="family-Nord_Cambrai_ancien"      select="'C B7 B1'"/>
     <xsl:param name="family-Remanie_Manuel"           select="'A2'"/>
