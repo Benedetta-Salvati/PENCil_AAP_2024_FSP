@@ -856,22 +856,22 @@ La présente normalisation fait porter sur `<app>` un `@type` de la forme `op-mi
 
 | Élément | Attribut | Valeurs normalisées | Valeurs d’origine | Remarques |
 |---------|----------|---------------------|-------------------------------|-----------|
-| `<app>` | `@type` | `op-micro-graph` | `type="graph"` | variation graphique pure |
-| `<app>` | `@type` | `op-micro-flex` | `type="flex"` | variation flexionnelle (désinence, nombre, personne) |
-| `<app>` | `@type` | `op-micro-morsynt` | `type="morsynt"` | variation morphosyntaxique (changement de catégorie, temps, personne) |
-| `<app>` | `@type` | `op-micro-semlex-minor` | `type="semlex:minor"` | variation sémantico-lexicale **faible** |
-| `<app>` | `@type` | `op-micro-semlex-major` | `type="semlex:major"` | variation sémantico-lexicale **forte** |
-| `<app>` | `@type` | `op-micro-semlex-nonsens` | `type="semlex:nonsens"` | lecture dépourvue de sens |
+| `<app>` | `@type` | `op-micro-graph` | `type="graphemic"` | variation graphique pure |
+| `<app>` | `@type` | `op-micro-flex` | `type="morphologic"` | variation flexionnelle (désinence, nombre, personne) |
+| `<app>` | `@type` | `op-micro-morsynt` | `type="morphosyntactic"` | variation morphosyntaxique (changement de catégorie, temps, personne) |
+| `<app>` | `@type` | `op-micro-semlex-minor` | `type="semlex:weak"` | variation sémantico-lexicale faible |
+| `<app>` | `@type` | `op-micro-semlex-major` | `type="semlex:strong"` | variation sémantico-lexicale forte |
+| `<app>` | `@type` | `op-micro-semlex-nonsens` | `type="semlex:nonsense"` | lecture dépourvue de sens |
 
 #### Sous-typage de la variation sémantico-lexicale
 
 | Élément | Attribut | Valeurs | Signification |
 |---------|----------|---------|---------------|
-| `<app>` (quand `@type` est de la famille semlex) | `@subtype` | `gramm` | variation sur un grammème (déterminant, pronom, préposition, coordonnant, adverbe grammatical) |
+| `<app>` (quand `@type` est de la famille semlex) | `@subtype` | `grammeme` | variation sur un grammème (déterminant, pronom, préposition, coordonnant, adverbe grammatical) |
 | `<app>` | `@subtype` | `morphconstr` | variation de morphologie constructionnelle (préfixe, suffixe, dérivation, alternance nom/verbe de même base) |
 | `<app>` | `@subtype` | `syn` | synonymie ou équivalent référentiel |
 | `<app>` | `@subtype` | `rcapcs` | relations cognitives-associatives de proximité / continuité sémantique (hyperonymie, hyponymie, similarité taxinomique, métonymie, etc.) |
-| `<rdg>` (cas de nonsense) | `@type` (local, sur la leçon) | `nonsens` | permet de marquer la seule leçon aberrante à l’intérieur d’un app sémantique |
+| `<rdg>` (cas de nonsense) | `@type` (local, sur la leçon) | `nonsense` | permet de marquer la seule leçon aberrante à l’intérieur d’un app sémantique |
 
 ---
 
@@ -879,9 +879,9 @@ La présente normalisation fait porter sur `<app>` un `@type` de la forme `op-mi
 
 | Élément | Attribut | Valeurs normalisées | Valeurs d’origine (document) | Remarques |
 |---------|----------|---------------------|-------------------------------|-----------|
-| `<app>` | `@type` | `op-micro-plur-semlex-minor` | `type="plur-semlex:minor"` | variation sémantico-lexicale faible portant sur un syntagme ou une locution |
-| `<app>` | `@type` | `op-micro-plur-semlex-major` | `type="plur-semlex:major"` | variation sémantico-lexicale forte portant sur plusieurs mots |
-| `<app>` | `@type` | `op-micro-plur-semlex-nonsens` | `type="plur-semlex:nosens"` (typo. dans exemple) | séquence aberrante sur plusieurs mots |
+| `<app>` | `@type` | `op-micro-plur-semlex-weak` | `type="plur-semlex:weak"` | variation sémantico-lexicale faible portant sur un syntagme ou une locution |
+| `<app>` | `@type` | `op-micro-plur-semlex-strong` | `type="plur-semlex:strong"` | variation sémantico-lexicale forte portant sur plusieurs mots |
+| `<app>` | `@type` | `op-micro-plur-semlex-nonsense` | `type="plur-semlex:nonsense"` (typo. dans exemple) | séquence aberrante sur plusieurs mots |
 | `<app>` | `@subtype` | mêmes sous-types que ci-dessus (`gramm`, `morphconstr`, `syn`, `rcapcs`) | permet de préciser la nature de la variation sur syntagme |
 
 ---
@@ -892,7 +892,7 @@ La présente normalisation fait porter sur `<app>` un `@type` de la forme `op-mi
 |-----|---------|----------------------|
 | Présence/absence avec lemme vide | `<app>` + `<lem/>` ou `<rdg/>` | `@type="op-micro-add"` ou `op-micro-om` + `@ana="#lvl-micro …"` |
 | Variation de noms propres | `<app type="op-micro-semlex-minor">` ou `<app type="op-micro-semlex-major">` | `@subtype="syn"` (si même référent) ou pas (si changement de référent) |
-| Dates et nombres | même schéma que semlex (minor/major) | la décision de faible/fort est éditoriale |
+| Dates et nombres | même schéma que semlex (weak/strong) | la décision de faible/fort est éditoriale |
 | Substitution macro (dans la partie 1.2.4 ?) | se fait en réalité avec le jeu **macro** ci-dessus | donc `@type="op-macro-…"`, pas besoin d’un type micro |
 
 ---
